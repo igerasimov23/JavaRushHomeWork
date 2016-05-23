@@ -1,7 +1,7 @@
-package com.javarush.test.level11.lesson08.task02;
+package com.javarush.test.level11.lesson08.task03;
 
-/* Доступ есть
-Скрыть все внутренние переменные класса Cat, но только те, к которым остается доступ с помощью методов.
+/* Ничего не поменяешь
+Скрыть все внутренние переменные класса Cat, а также методы, позволяющие менять внутреннее состояние объектов класса Cat.
 */
 
 public class Solution
@@ -14,7 +14,7 @@ public class Solution
     {
         private String name;
         private int age;
-        public int weight;
+        private int weight;
 
         public Cat(String name, int age, int weight)
         {
@@ -28,7 +28,7 @@ public class Solution
             return name;
         }
 
-        public void setName(String name)
+        private void setName(String name)
         {
             this.name = name;
         }
@@ -38,7 +38,7 @@ public class Solution
             return age;
         }
 
-        public void setAge(int age)
+        private void setAge(int age)
         {
             this.age = age;
         }
