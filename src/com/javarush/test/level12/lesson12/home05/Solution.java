@@ -22,8 +22,26 @@ public class Solution
     public static String getObjectType(Object o)
     {
         //напишите тут ваш код
+//        if(o instanceof Cat)
+//            return "Кот";
+        if (o instanceof Animal) {
+            if(o instanceof Tiger)
+                return "Тигр";
+            else if(o instanceof Lion)
+                return "Лев";
+            else if(o instanceof Cat)
+                return "Кот";
+            else if (o instanceof Bull)
+                return "Бык";
+            else if (o instanceof Cow)
+                return "Корова";
 
+
+        }
         return "Животное";
+
+
+
         //git
     }
 
