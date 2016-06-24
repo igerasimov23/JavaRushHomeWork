@@ -1,9 +1,6 @@
 package TempExamples;
 
 
-/**
- * Created by Ilya on 1/25/2016.
- */
 
 
 public class AmazonEX {

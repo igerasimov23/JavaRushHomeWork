@@ -13,10 +13,19 @@ public class CountElements {
                 map.put(str.charAt(i),map.get(str.charAt(i))+1);
             else
                 map.put(str.charAt(i),1);
-
-
         }
         for( HashMap.Entry<Character, Integer> e : map.entrySet())
             System.out.println(e.getKey() + " : " + e.getValue());
+
+
+
+
+
+
+
     }
+
+
+
+
 }

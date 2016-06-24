@@ -17,7 +17,7 @@ public class ExTime {
         hm.put(5, "Raj");
         hm.put(6, "sanjay");
 
-        hm = invert(invert(hm));
+        hm = Myinvert(Myinvert(hm));
 
         System.out.println(hm);
     }
@@ -32,6 +32,15 @@ public class ExTime {
         return result;
     }
 
+    private static <Integer,String> Map Myinvert(Map<Integer,String> map)
+    {
+        Map<String, Integer> result = new HashMap<>();
+        for (Map.Entry<Integer, String> entry : map.entrySet())
+        {
+            result.put(entry.getValue(), entry.getKey());
+        }
+        return result;
+    }
 
     }
 
