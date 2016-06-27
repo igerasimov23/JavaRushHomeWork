@@ -1,6 +1,7 @@
 package TempExamples;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Ilya on 1/27/2016
@@ -22,22 +23,21 @@ public class FirstRepeatedCharacter {
             else
                 map.put(str.charAt(i), 1);
         }
-
         for (int i = 0; i < str.length(); i++) {
-            if (map.get(str.charAt(i)) == 1) {
-                System.out.println(str.charAt(i));
-                return str.charAt(i);
-            }
-        }
-        for (int i = 0; i < str.length(); i++) {
-            if (map.get(str.charAt(i)) >= 1) {
-                System.out.println(str.charAt(i));
-                return str.charAt(i);
+            for (Map.Entry<Character, Integer> entry : map.entrySet()){
+                if(str.charAt(i) == entry.getKey()){
+                    if(entry.getValue() == 1) {
+                        return str.charAt(i);
 
+                    }
+                }
 
             }
+
         }
-        return null;
+
+        throw new RuntimeException("did not find ");
+
 
     }
 }
