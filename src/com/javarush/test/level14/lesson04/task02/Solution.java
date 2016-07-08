@@ -16,11 +16,13 @@ public class Solution
         //Add your code here
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String param = reader.readLine();
-        while (true) {
-            if(param.equals(""))
-                return;
+        while (!param.isEmpty()) {
+//            if(param.equals(""))
+//                return;
+//
+            Cat c1 = CatFactory.getCatByKey(param);
+            System.out.println(c1.toString());
             param = reader.readLine();
-            System.out.println( CatFactory.getCatByKey(param));
 
         }
     }
