@@ -17,9 +17,12 @@ package com.javarush.test.level13.lesson11.bonus01;
 10
 */
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Solution
@@ -27,9 +30,8 @@ public class Solution
     public static void main(String[] args) throws IOException {
         // напишите тут ваш код
 
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//        String nameFile = reader.readLine();
-        String nameFile = "c:/Users/Dell/file.txt";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String nameFile = reader.readLine();
 
         Scanner scanner = new Scanner(new File(nameFile));
         ArrayList<Integer> list = new ArrayList<>();
@@ -39,6 +41,11 @@ public class Solution
             if(number % 2 == 0)
                 list.add(number);
         }
+
+        Collections.sort(list);
+
+        for(int i : list)
+            System.out.println(i);
 
     }
 
