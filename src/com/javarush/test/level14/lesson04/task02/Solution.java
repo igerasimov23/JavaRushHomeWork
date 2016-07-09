@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /* Коты
+=======
+import java.io.InputStreamReader;/* Коты
+>>>>>>> origin/Work_level14
 1. Считывать строки(параметры) с консоли, пока пользователь не введет пустую строку(Enter).
 2. Каждый параметр соответствует имени кота.
 Для каждого параметра:
@@ -16,6 +19,17 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         //Add your code here
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String param = reader.readLine();
+        while (!param.isEmpty()) {
+//            if(param.equals(""))
+//                return;
+//
+            Cat c1 = CatFactory.getCatByKey(param);
+            System.out.println(c1.toString());
+            param = reader.readLine();
+
+        }
     }
 
     static class CatFactory

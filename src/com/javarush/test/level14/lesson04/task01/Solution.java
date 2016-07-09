@@ -20,13 +20,14 @@ public class Solution
     public static Building getSchool()
     {
         //измените null на объект класса Building или School
-        return School;
+
+        return new School();
     }
 
     public static Building getBuilding()
     {
         //измените null на объект класса Building или School
-        return ;
+        return new Building();
     }
 
     static class School extends Building /*Add your code here*/
