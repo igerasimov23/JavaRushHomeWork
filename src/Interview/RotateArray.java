@@ -22,7 +22,7 @@ public class RotateArray {
         int [] myArray = {1,2,3,4,5,6,7};
         int [] newArray = new int[6];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             for (int j = myArray.length-1; j >0; j--) {
                 int temp = myArray[j-1];
                 myArray[j-1] = myArray[j];
