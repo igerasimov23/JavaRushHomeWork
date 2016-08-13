@@ -1,0 +1,43 @@
+<html>
+	<head></head>
+	<body>
+		<div class="header">
+			<ul id="user_commands">
+				<li>
+					<a href="javascript:findStuff()">Find things</a>
+				</li>
+				<li>
+					<a href="javascript:findStuff(1)">Find more things</a>
+				</li>
+				<li>
+					<a href="javascript:doLogout()">Logout</a>
+				</li>
+			</ul>
+			<ul id="admin_commands">
+				<li>Run as Admin:</li>
+				<li>
+					<a href="javascript:findStuff()">Find things</a>
+				</li>
+				<li>
+					<a href="javascript:findStuff(1)">Find more things</a>
+				</li>
+				<li>
+					<a href="javascript:doLogout()">Logout</a>
+				</li>
+			</ul>
+		</div>
+		<!-- User view of results-->
+		<div class="result-set">
+			<h4>My Things</h4>
+			<div class="result"><span>3</span><span class="result-item">something</span><span class="date-display">2/12/2012 12:10 PM</span><span class="owner">Betty</span></div>
+		</div>
+		
+		<!-- Admin view of results-->
+		<div class="result-set">
+			<h4>Things:All Users</h4>
+			<div class="result"><span>1</span><span class="result-item">Thing</span><span class="date-display">2/12/2012 12:22 PM</span><span class="owner">John</span></div>
+			<div class="result"><span>2</span><span class="result-item">Another Thing</span><span class="date-display">2/12/2012 12:12 PM</span><span class="owner">admin</span></div>
+			<div class="result"><span>3</span><span class="result-item">something</span><span class="date-display">2/12/2012 12:10 PM</span><span class="owner">Betty</span></div>
+		</div>
+	</body>
+</html>
