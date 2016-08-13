@@ -38,7 +38,9 @@ public class Solution
             this.name = name;
             this.allMoney = new ArrayList<Money>();
             //Add your code here
-//            for(Money money1 : money)
+            this.allMoney.add(new USD(2));
+            this.allMoney.add(new Hrivna(3));
+
         }
 
         private List<Money> allMoney;

@@ -18,6 +18,7 @@ public class Reverse {
         String strNumber = String.valueOf(num);
         StringBuffer stringBuffer = new StringBuffer(strNumber);
         strNumber = stringBuffer.reverse().toString();
+        System.out.println(new Object(){}.getClass().getEnclosingClass());
 
         return Integer.parseInt(strNumber);
     }
