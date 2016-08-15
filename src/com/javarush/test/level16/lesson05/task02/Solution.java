@@ -17,6 +17,7 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         List<Horse> horses = prepareHorsesAndStart();
+        System.out.println(calculateHorsesFinished(horses));
         while (calculateHorsesFinished(horses) != countHorses) {
         }
     }
@@ -24,6 +25,15 @@ public class Solution {
     public static int calculateHorsesFinished(List<Horse> horses) throws InterruptedException {
         int countFinished = 0;
         //add your implementation here - добавь свою реалзацию тут
+        for(Horse horse : horses){
+            if(horse.isFinished())
+                countFinished = countFinished + 1;
+            else if(!horse.isFinished()){
+                System.out.println("Waiting for " + horse.getName());
+                horse.join();
+                countFinished = countFinished + 1;
+            }
+        }
         return countFinished;
     }
 

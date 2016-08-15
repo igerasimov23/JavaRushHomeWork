@@ -1,18 +1,22 @@
 package TempExamples;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 
 public class Temp {
     public static void main(String[] args) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+       run();
+    }
 
-        String inputString = "01:30";
+    public static void run() {
+        String s = "";
+        for (int i = 0; i < 1001; i++) {   //delay
+            s += new String("" + i);
+            System.out.println(s+ "\n");
+            if (i == 1000) {
+                s = " has finished the race!";
+                System.out.println( s);
 
-        Date date = sdf.parse(inputString);
-        System.out.println("in milliseconds: " + date.getTime());
+            }
+        }
     }
 }
