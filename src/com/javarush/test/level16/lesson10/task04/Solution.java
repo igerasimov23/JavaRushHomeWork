@@ -17,22 +17,18 @@ public class Solution {
     }
 
     public static void ourInterruptMethod() {
-        TestThread testThread = new TestThread();
-        testThread.cancel();
+        TestThread.isCancel=true;
     }
 
     public static class TestThread implements Runnable {
-        private boolean isCancel = false;
-        public void cancel(){
-            this.isCancel = true;
-        }
+        public static boolean isCancel = false;
+
         public void run() {
-            while(true) {
+            while(!isCancel) {
                 try {
                     System.out.println("he-he");
                     Thread.sleep(500);
-                    if (!isCancel)
-                        return;
+
                 } catch (InterruptedException e) {
                 }
             }
