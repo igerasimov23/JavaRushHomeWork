@@ -1,6 +1,6 @@
 package com.javarush.test.level16.lesson13.home01;
 
-/* Thread.currentThread - всегда возвращает текущую нить
+/* ThreadEx.currentThread - всегда возвращает текущую нить
 1. В методе printMsg присвой переменной t текущую нить.
 2. В методе printMsg после всех действий поставь задержку в 1 миллисекунду.
 */

@@ -10,7 +10,7 @@ import java.util.List;
 2. Реализуй метод ourInterruptMethod, чтобы он прерывал все нити из threads.
 3. В методе run исправь значения переменных:
 3.1. isCurrentThreadInterrupted - должна равняться значению метода isInterrupted у текущей нити.
-3.2. threadName - должна равняться значению метода getName (реализовано в классе Thread) у текущей нити.
+3.2. threadName - должна равняться значению метода getName (реализовано в классе ThreadEx) у текущей нити.
 */
 
 public class Solution {

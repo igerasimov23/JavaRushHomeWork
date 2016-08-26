@@ -29,7 +29,7 @@ public class Solution {
                 while(true){
                     System.out.println(toString());
                     countIndexUp += 1;
-                    if(countIndexUp == Solution.number) return;
+                    if(countIndexUp > Solution.number) return;
                     Thread.sleep(500);
                 }
             } catch (InterruptedException e) {
