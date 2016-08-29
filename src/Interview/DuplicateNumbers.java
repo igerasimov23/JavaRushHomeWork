@@ -13,6 +13,7 @@ public class DuplicateNumbers {
 
         for(int n : numbers){
             boolean unique = set.add(n);
+            System.out.println(unique);
             if (!unique)
                 System.out.println(n);
         }
