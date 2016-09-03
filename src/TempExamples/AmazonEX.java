@@ -1,8 +1,6 @@
 package TempExamples;
 
 
-
-
 public class AmazonEX {
 
 
@@ -17,6 +15,7 @@ public class AmazonEX {
                     ii++;
                 }
             }
+
         }
 
 }
