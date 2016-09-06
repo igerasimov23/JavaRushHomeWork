@@ -13,28 +13,40 @@ fileOutputName - имя файла, куда необходимо записат
 -d - ключ указывает, что необходимо расшифровать данные
 */
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
 
+
+/*
         BufferedReader reader = new BufferedReader(new FileReader(args[1]));
-
-        FileWriter fileWriter = new FileWriter(args[2], true);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(args[2], false));
         String line;
-        while((line = reader.readLine()) != null){
-            StringBuffer buffer = new StringBuffer(line);
-            line = buffer.reverse().toString();
-            fileWriter.write(line);
 
-        }
+            while ((line = reader.readLine()) != null) {
+                StringBuffer buffer = new StringBuffer(line);
+                line = buffer.reverse().toString();
+                writer.write(line);
+
+            }
 
         reader.close();
-        fileWriter.close();
+        writer.close();*/
 
+        if(args.length != 3)
+            return;
+
+       FileInputStream inputStream = new FileInputStream(args[1]);
+        FileOutputStream outputStream = new FileOutputStream(args[2]);
+
+        while(inputStream.available() >0){
+            int data = inputStream.read();
+            outputStream.write(data ^ 2);
+        }
+
+        inputStream.close();
+        outputStream.close();
 
 
 
