@@ -20,6 +20,10 @@ public class RemovingCharFromString {
         }
         String s = charList.toString();
         System.out.println(s);
+
+
+
+
     }
 
 }

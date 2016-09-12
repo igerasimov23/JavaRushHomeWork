@@ -19,7 +19,7 @@ public class Fabinochi {
         } else if (number == 1) {
             System.out.println(fab2);
         }
-        if (number >=2) {
+        else if (number >=2) {
             for (int i = 0; i < number; i++) {
                 fab1 = fab1 + fab2;
                 fab2 = fab1 - fab2;
