@@ -28,10 +28,27 @@ public class Solution {
         System.setOut(stream);
 
         testString.printSomething();
-
         System.setOut(oldstream);
 
         String res = outputStream.toString();
+        String[] array = res.split(" ");
+        try {
+            int a = Integer.parseInt(array[0]);
+            int b = Integer.parseInt(array[2]);
+            int c = 0;
+            if(array[1].equals("+")){
+                c = a + b;
+            }
+            else if(array[1].equals("-")){
+                c = a - b;
+            }
+            else if(array[1].equals("*")){
+                c = a * b;
+            }
+            System.out.print(a + " " + array[1] + " " + b + " = " + c );
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
 
     }
 
