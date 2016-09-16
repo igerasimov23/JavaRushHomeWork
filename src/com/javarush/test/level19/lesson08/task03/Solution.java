@@ -28,7 +28,7 @@ public class Solution {
         System.setOut(oldValue);
 
         String res = outputStream.toString();
-        res = res.replaceAll("[^0-9]","");
+        res = res.replaceAll("(\\d+\\s)","");
         System.out.println(res);
 
     }
