@@ -23,7 +23,7 @@ public class Fabinochi {
             for (int i = 0; i < number; i++) {
                 fab1 = fab1 + fab2;
                 fab2 = fab1 - fab2;
-                if (i == number - 1)
+//                if (i == number - 1)
                     System.out.println(fab1);
             }
         }
