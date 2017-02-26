@@ -1,8 +1,11 @@
 package com.javarush.test.level20.lesson02.task02;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /* Читаем и пишем в файл: JavaRush
 Реализуйте логику записи в файл и чтения из файла для класса JavaRush
@@ -14,16 +17,40 @@ public class Solution {
         //you can find your_file_name.tmp in your TMP directory or fix outputStream/inputStream according to your real file location
         //вы можете найти your_file_name.tmp в папке TMP или исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
         try {
-            File your_file_name = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream(your_file_name);
-            InputStream inputStream = new FileInputStream(your_file_name);
+//            File your_file_name = File.createTempFile("your_file_name", null);
+            OutputStream outputStream = new FileOutputStream("text1.txt");
+            InputStream inputStream = new FileInputStream("text1.txt");
+            DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 
             JavaRush javaRush = new JavaRush();
             //initialize users field for the javaRush object here - инициализируйте поле users для объекта javaRush тут
+            List<User> users = new ArrayList<>();
+            User user1 = new User();
+            user1.setFirstName("fName_u1");
+//            user1.setLastName("lName_u1");
+            user1.setBirthDate(dateFormat.parse("21.04.2000"));
+            user1.setMale(true);
+            user1.setCountry(User.Country.RUSSIA);
+
+            User user2 = new User();
+//            user2.setFirstName("fName_u2");
+//            user2.setLastName("lName_u2");
+            user2.setBirthDate(dateFormat.parse("21.04.2000"));
+            user2.setMale(false);
+            user2.setCountry(User.Country.UKRAINE);
+
+
+            users.add(user1);
+            users.add(user2);
+
+            javaRush.users = users;
+
+
             javaRush.save(outputStream);
             outputStream.flush();
 
             JavaRush loadedObject = new JavaRush();
+//            loadedObject.users = users;
             loadedObject.load(inputStream);
             //check here that javaRush object equals to loadedObject object - проверьте тут, что javaRush и loadedObject равны
 
@@ -34,20 +61,66 @@ public class Solution {
             //e.printStackTrace();
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             System.out.println("Oops, something wrong with save/load method");
         }
     }
 
     public static class JavaRush {
         public List<User> users = new ArrayList<>();
-
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
         public void save(OutputStream outputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            PrintWriter writer = new PrintWriter(outputStream);
+            for(User user : users) {
+                writer.println("@");
+                String fName = user.getFirstName();
+                if(fName == null)
+                    fName = "noName";
+                writer.println(fName);
+
+                String lName = user.getLastName();
+                if (lName == null)
+                    lName = "noLastName";
+                writer.println(lName);
+
+                writer.println(dateFormat.format(user.getBirthDate()));
+                writer.println(user.isMale());
+                writer.println(user.getCountry());
+
+            }
+
+            writer.close();
         }
 
         public void load(InputStream inputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            while(reader.ready()) {
+                String newUser = reader.readLine();
+                if(newUser.equals("@")){
+                    User user = new User();
+
+                    String name = reader.readLine();
+                    if (name.equals("noName"))
+                        name = null;
+                    user.setFirstName(name);
+
+                    String lName = reader.readLine();
+                    if (lName.equals("noLastName"))
+                        lName = null;
+                    user.setLastName(lName);
+
+                    user.setBirthDate(dateFormat.parse(reader.readLine()));
+                    user.setMale(Boolean.parseBoolean(reader.readLine()));
+                    user.setCountry(User.Country.valueOf(reader.readLine()));
+                    users.add(user);
+
+                }
+            }
+            reader.close();
+
         }
     }
 }

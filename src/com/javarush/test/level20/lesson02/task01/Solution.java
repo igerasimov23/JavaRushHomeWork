@@ -18,7 +18,7 @@ public class Solution {
         try {
 
 //            File your_file_name = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream("text.txt");
+            OutputStream outputStream = new FileOutputStream("text1.txt");
             InputStream inputStream = new FileInputStream("text.txt");
 
             Human ivanov = new Human("Ivanov", new Asset("home"), new Asset("car"));
