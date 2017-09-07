@@ -56,8 +56,6 @@ public class Solution {
 
                         y1 = row;
                         x1 = column;
-
-
                 }
                 if(a[row][column] == 0){
 
@@ -77,8 +75,6 @@ public class Solution {
     }
 
     public static int getOneRectangleCount(byte[][] a) {
-
-
 
         return 0;
     }
