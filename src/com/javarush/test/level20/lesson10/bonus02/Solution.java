@@ -27,9 +27,6 @@ public class Solution {
     }
 
     public static int getRectangleCount(byte[][] a) {
-//        System.out.println(a.s + "***");
-//        byte b = a;
-//        System.out.println(b);
         int mainColumn = 0;
         int mainRow = 0;
         int row, column;
@@ -64,15 +61,6 @@ public class Solution {
                 }
                 if(a[row][column] == 0){
 
-//                    if (y0 == 1){
-////                        y1 = row;
-//                        x1 = column-1;
-//                        xy11 = new int[]{row, column-1};
-//                    }
-//                    if (y1 == 1){
-//                        y1 = row;
-//                        x1 = column-1;
-//                    }
                     posxy11 = new int[]{row, column -1};
                     break;
 
