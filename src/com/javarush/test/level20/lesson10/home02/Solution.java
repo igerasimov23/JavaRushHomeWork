@@ -10,7 +10,7 @@ import java.io.Serializable;
 */
 public class Solution {
     public A getOriginalObject(ObjectInputStream objectStream) {
-        if ()
+
         return null;
     }
 
