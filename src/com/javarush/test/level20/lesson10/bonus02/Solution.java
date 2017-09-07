@@ -14,7 +14,16 @@ import java.util.Arrays;
 6. Метод main не участвует в тестировании
 */
 public class Solution {
+
+
+
+
+
     public static void main(String[] args) {
+
+
+
+
         byte[][] a = new byte[][]{
                 {1, 1, 0, 0},
                 {1, 1, 0, 0},
@@ -22,9 +31,23 @@ public class Solution {
                 {1, 1, 0, 0}
         };
         int count = getRectangleCount(a);
+
+
+
+
         System.out.println("count = " + count + ". Должно быть 2");
 //        System.out.println(a[3]);
     }
+
+
+
+
+
+
+
+
+
+
 
     public static int getRectangleCount(byte[][] a) {
         int mainColumn = 0;
